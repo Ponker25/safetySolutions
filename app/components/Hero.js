@@ -6,7 +6,7 @@ export class Hero extends React.Component {
         return (
             <Image
                 style={styles.heroImage}
-                source={require('./img/laptop2.jpg')}
+                source={require('./img/homescreen.jpg')}
             />
         );
     }
