@@ -1,10 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Header } from '../components/Header';
-import { Hero } from '../components/Hero';
+import { Progress } from '../components/Progress';
 import { Menu } from '../components/Menu';
-// import { StackNavigator } from 'react-navigation';
-
 
 export class Home extends React.Component {
     static navigationOptions = {
@@ -15,7 +13,7 @@ export class Home extends React.Component {
         return (
             <View style={styles.container}>
                 <Header message='Press to Login' navigate={navigate} />
-                <Hero />
+                <Progress />
                 <Menu navigate={navigate} />
             </View>
 
