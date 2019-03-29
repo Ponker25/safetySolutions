@@ -1,18 +1,44 @@
 import React from 'react';
-import { View, StyleSheet, Image } from 'react-native';
+import { View, StyleSheet, Text, Image } from 'react-native';
 import { AnimatedCircularProgress } from 'react-native-circular-progress';
 
+
 export class Progress extends React.Component {
+    constructor(props) {
+        super(props);
+        // TODO: have props pass in this.state.points value(seen below)
+        this.state = {
+            isMoving: false,
+            points: 85
+        };
+    }
+
     render() {
+        //  fill is calculated between 0-100
+        const fill = (this.state.points)
         return (
             <View style={styles.container}>
+
                 <AnimatedCircularProgress
-                    size={120}
-                    width={15}
-                    fill={95}
-                    tintColor="#00e0ff"
-                    onAnimationComplete={() => console.log('onAnimationComplete')}
-                    backgroundColor="#3d5875" />
+                    size={300}
+                    width={25}
+                    fill={fill}
+                    tintColor="#59F22A"
+                    onAnimationComplete={() => console.log('ProgressBar onAnimationComplete')}
+                    backgroundColor="#3d5875"
+                    rotation={0}
+
+                >
+                    {fill =>
+                        <View >
+                            <Image
+                                style={styles.fillImage}
+                                source={require('./img/tempHelmet.png')}
+                            />
+                            <Text style={styles.points}>{fill}/100</Text>
+                        </View>
+                    }
+                </AnimatedCircularProgress>
             </View>
         );
     }
@@ -26,9 +52,16 @@ const styles = StyleSheet.create({
         backgroundColor: '#152d44',
         padding: 50,
     },
-    heroImage: {
+    points: {
+        textAlign: 'center',
+        color: '#7591af',
+        fontSize: 35,
+        fontWeight: '100',
+        flex: .5
+    },
+    fillImage: {
         width: undefined,
         height: undefined,
-        flex: 8,
+        flex: 1,
     }
 })
