@@ -4,6 +4,7 @@ import { Header } from '../components/Header';
 import { Hero } from '../components/Hero';
 import { Menu } from '../components/Menu';
 // import { StackNavigator } from 'react-navigation';
+import { FooterMenu } from '../components/FooterMenu'
 
 
 export class Home extends React.Component {
@@ -17,6 +18,7 @@ export class Home extends React.Component {
                 <Header message='Press to Login' navigate={navigate} />
                 <Hero />
                 <Menu navigate={navigate} />
+                <FooterMenu />
             </View>
 
         );
