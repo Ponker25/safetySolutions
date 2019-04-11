@@ -4,7 +4,7 @@ import { Header } from '../components/Header';
 import { Hero } from '../components/Hero';
 import { Menu } from '../components/Menu';
 // import { StackNavigator } from 'react-navigation';
-import { FooterMenu } from '../components/FooterMenu'
+
 
 
 export class Home extends React.Component {
@@ -12,13 +12,11 @@ export class Home extends React.Component {
         header: null
     };
     render() {
-        const { navigate } = this.props.navigation;
         return (
             <View style={styles.container}>
-                <Header message='Press to Login' navigate={navigate} />
+                <Header message='Press to Login'/>
                 <Hero />
-                <Menu navigate={navigate} />
-                <FooterMenu />
+                <Menu />
             </View>
 
         );
