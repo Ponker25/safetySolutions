@@ -9,3 +9,6 @@ npm-debug.*
 
 #API Key Security
 app/keys.json
+
+#iconList 
+app/components/references/iconList.json
