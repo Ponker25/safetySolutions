@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Checkbox } from 'react-native-paper';
 
-export default class Checkbox extends React.Component {
+export default class CheckListItem extends React.Component {
     state = {
         checked: false,
     };

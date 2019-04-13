@@ -31,9 +31,10 @@ export class Progress extends React.Component {
                 >
                     {fill =>
                         <View >
+
                             <Image
                                 style={styles.fillImage}
-                                source={require('./img/tempHelmet.png')}
+                                source={require('./img/hardhat1.png')}
                             />
                             <Text style={styles.points}>{fill}/100</Text>
                         </View>
@@ -55,13 +56,15 @@ const styles = StyleSheet.create({
     points: {
         textAlign: 'center',
         color: '#7591af',
-        fontSize: 35,
+        fontSize: 30,
         fontWeight: '100',
-        flex: .5
+        flex: 3
     },
+
     fillImage: {
         width: undefined,
         height: undefined,
-        flex: 1,
+        padding: 80,
+        flex: .5,
     }
 })
