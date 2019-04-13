@@ -12,8 +12,6 @@ export class Home extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-
-                <Header message='Press to Login' />
                 <Progress />
                 <Menu />
 
