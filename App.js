@@ -72,7 +72,7 @@ const theme = {
   },
 };
 
-const HomeRT = () => <Home /> ;
+const HomeRT = () => <Home />;
 
 const ContactRT = () => <Contact />;
 
@@ -89,8 +89,8 @@ export default class AlwaysVisible extends React.Component {
       { key: 'home', title: 'Home', icon: 'home' },
       { key: 'contact', title: 'Contact', icon: 'message' },
       { key: 'blog', title: 'Blog', icon: 'public' },
-      { key: 'checklist', title: 'Checklist', icon: 'done'},
-      { key: 'more', title: 'More', icon: 'menu'}
+      { key: 'checklist', title: 'Checklist', icon: 'done' },
+      { key: 'more', title: 'More', icon: 'menu' }
     ],
   };
 
@@ -126,12 +126,12 @@ export default class AlwaysVisible extends React.Component {
             <Appbar.Action icon="more-vert" onPress={this._onMore} />
           </Appbar.Header>
           <BottomNavigation
-          navigationState={this.state}
-          onIndexChange={this._handleIndexChange}
-          renderScene={this._renderScene}
+            navigationState={this.state}
+            onIndexChange={this._handleIndexChange}
+            renderScene={this._renderScene}
           />
-      </Fragment>
-    </PaperProvider>
+        </Fragment>
+      </PaperProvider>
     );
   }
 }
