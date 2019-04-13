@@ -10,6 +10,14 @@ export class Checklist extends React.Component {
     };
     state = {
         checked: false,
+
+
+
+
+
+
+
+
     };
 
     render() {

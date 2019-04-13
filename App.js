@@ -18,7 +18,7 @@ import { BlogDetail } from './app/views/BlogDetail';
 
 import { About } from './app/views/About';
 import { Checklist } from './app/views/Checklist';
-import { BottomNavigation, Appbar } from 'react-native-paper';
+import { DefaultTheme, Provider as PaperProvider, BottomNavigation, Appbar } from 'react-native-paper';
 
 
 // const MyRoutes = createStackNavigator(
@@ -61,6 +61,17 @@ import { BottomNavigation, Appbar } from 'react-native-paper';
 
 // export default AppContainer;
 
+const theme = {
+  ...DefaultTheme,
+  dark: true,
+  roundness: 2,
+  colors: {
+    ...DefaultTheme.colors,
+    primary: '#1a1e21',
+    accent: '#f1c40f',
+  },
+};
+
 const HomeRT = () => <Home />;
 
 const ContactRT = () => <Contact />;
@@ -71,7 +82,7 @@ const MoreRT = () => <About />;
 
 const ChecklistRT = () => <Checklist />;
 
-export default class FooterMenu extends React.Component {
+export default class AlwaysVisible extends React.Component {
   state = {
     index: 0,
     routes: [
@@ -101,24 +112,26 @@ export default class FooterMenu extends React.Component {
 
   render() {
     return (
-      <Fragment>
-        <Appbar.Header>
-          <Appbar.BackAction
-            onPress={this._goBack}
+      <PaperProvider theme={theme}>
+        <Fragment>
+          <Appbar.Header>
+            <Appbar.BackAction
+              onPress={this._goBack}
+            />
+            <Appbar.Content
+              title="Safety Solutions"
+              subtitle="Safety is our goal!"
+            />
+            <Appbar.Action icon="search" onPress={this._onSearch} />
+            <Appbar.Action icon="more-vert" onPress={this._onMore} />
+          </Appbar.Header>
+          <BottomNavigation
+            navigationState={this.state}
+            onIndexChange={this._handleIndexChange}
+            renderScene={this._renderScene}
           />
-          <Appbar.Content
-            title="Safety Solutions"
-            subtitle="Safety is our goal!"
-          />
-          <Appbar.Action icon="search" onPress={this._onSearch} />
-          <Appbar.Action icon="more-vert" onPress={this._onMore} />
-        </Appbar.Header>
-        <BottomNavigation
-          navigationState={this.state}
-          onIndexChange={this._handleIndexChange}
-          renderScene={this._renderScene}
-        />
-      </Fragment>
+        </Fragment>
+      </PaperProvider>
     );
   }
 }
