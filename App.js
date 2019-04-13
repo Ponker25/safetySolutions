@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 // import { StyleSheet, Text, View } from 'react-native';
 
 import { createAppContainer, createStackNavigator } from 'react-navigation';
@@ -18,7 +18,7 @@ import { BlogDetail } from './app/views/BlogDetail';
 
 import { About } from './app/views/About';
 import { Checklist } from './app/views/Checklist';
-import { BottomNavigation, Text } from 'react-native-paper';
+import { BottomNavigation, Appbar } from 'react-native-paper';
 
 
 // const MyRoutes = createStackNavigator(
@@ -69,6 +69,8 @@ const BlogRT = () => <Blog />;
 
 const MoreRT = () => <About />;
 
+const ChecklistRT = () => <Checklist />;
+
 export default class FooterMenu extends React.Component {
   state = {
     index: 0,
@@ -76,9 +78,16 @@ export default class FooterMenu extends React.Component {
       { key: 'home', title: 'Home', icon: 'home' },
       { key: 'contact', title: 'Contact', icon: 'message' },
       { key: 'blog', title: 'Blog', icon: 'public' },
-      { key: 'more', tite: 'MoreOptions', icon: 'menu'}
+      { key: 'checklist', title: 'Checklist', icon: 'done'},
+      { key: 'more', title: 'More', icon: 'menu'}
     ],
   };
+
+  _goBack = () => console.log('Went back');
+
+  _onSearch = () => console.log('Searching');
+
+  _onMore = () => console.log('Shown more');
 
   _handleIndexChange = index => this.setState({ index });
 
@@ -86,16 +95,30 @@ export default class FooterMenu extends React.Component {
     home: HomeRT,
     contact: ContactRT,
     blog: BlogRT,
+    checklist: ChecklistRT,
     more: MoreRT,
   });
 
   render() {
     return (
-      <BottomNavigation
+      <Fragment>
+        <Appbar.Header>
+          <Appbar.BackAction
+            onPress={this._goBack}
+          />
+          <Appbar.Content
+            title="Safety Solutions"
+            subtitle="Safety is our goal!"
+          />
+          <Appbar.Action icon="search" onPress={this._onSearch} />
+          <Appbar.Action icon="more-vert" onPress={this._onMore} />
+        </Appbar.Header>
+        <BottomNavigation
         navigationState={this.state}
         onIndexChange={this._handleIndexChange}
         renderScene={this._renderScene}
-      />
+        />
+    </Fragment>
     );
   }
 }
