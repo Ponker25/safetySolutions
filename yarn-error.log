@@ -1,26 +1,30 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\Mark\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js
+  /usr/local/Cellar/node/9.10.1/bin/node /usr/local/bin/yarn add appbar
 
 PATH: 
-  C:\Users\Mark\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Mark\bin;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\nodejs;C:\WINDOWS\System32\OpenSSH;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\Git\cmd;C:\Program Files\MongoDB\Server\4.0\bin;C:\MAMP\bin\php\php7.2.1;C:\composer;C:\Program Files\dotnet;C:\Users\Mark\AppData\Local\Programs\Python\Python37-32\Scripts;C:\Users\Mark\AppData\Local\Programs\Python\Python37-32;C:\Users\Mark\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Microsoft VS Code\bin;C:\Users\Mark\AppData\Roaming\npm;C:\Program Files\Heroku\bin;C:\Users\Mark\AppData\Roaming\Composer\vendor\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
+  /usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Applications/Postgres.app/Contents/Versions/latest/bin
 
 Yarn version: 
   1.9.4
 
 Node version: 
-  8.11.1
+  9.10.1
 
 Platform: 
-  win32 x64
+  darwin x64
 
 Trace: 
-  SyntaxError: C:\Users\Mark\developer\2019_projects\projects\safetySolutions\package.json: Unexpected string in JSON at position 513
-      at JSON.parse (<anonymous>)
-      at C:\Users\Mark\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:1130:59
-      at Generator.next (<anonymous>)
-      at step (C:\Users\Mark\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:92:30)
-      at C:\Users\Mark\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:103:13
-      at <anonymous>
+  Error: https://registry.yarnpkg.com/appbar: Not found
+      at Request.params.callback [as _callback] (/usr/local/lib/node_modules/yarn/lib/cli.js:64202:18)
+      at Request.self.callback (/usr/local/lib/node_modules/yarn/lib/cli.js:137468:22)
+      at Request.emit (events.js:180:13)
+      at Request.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:138440:10)
+      at Request.emit (events.js:180:13)
+      at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:138362:12)
+      at Object.onceWrapper (events.js:272:13)
+      at IncomingMessage.emit (events.js:185:15)
+      at endReadableNT (_stream_readable.js:1106:12)
+      at process._tickCallback (internal/process/next_tick.js:114:19)
 
 npm manifest: 
   {
@@ -35,14 +39,11 @@ npm manifest:
       "expo": "^32.0.0",
       "react": "16.5.0",
       "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
-  
       "react-native-paper": "^2.15.0",
       "react-native-render-html": "^4.1.2",
       "react-navigation": "^3.5.1",
-      "react-navigation-material-bottom-tabs": "^1.0.0"
-  
+      "react-navigation-material-bottom-tabs": "^1.0.0",
       "react-native-circular-progress": "^1.1.0",
-     
       "save": "^2.3.3"
     },
     "devDependencies": {
