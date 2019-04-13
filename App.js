@@ -61,7 +61,7 @@ import { BottomNavigation, Text } from 'react-native-paper';
 
 // export default AppContainer;
 
-const HomeRT = () => <Home /> ;
+const HomeRT = () => <Home />;
 
 const ContactRT = () => <Contact />;
 
@@ -76,7 +76,7 @@ export default class FooterMenu extends React.Component {
       { key: 'home', title: 'Home', icon: 'home' },
       { key: 'contact', title: 'Contact', icon: 'message' },
       { key: 'blog', title: 'Blog', icon: 'public' },
-      { key: 'more', tite: 'MoreOptions', icon: 'menu'}
+      { key: 'more', tite: 'MoreOptions', icon: 'menu' }
     ],
   };
 
