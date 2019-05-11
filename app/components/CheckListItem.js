@@ -2,8 +2,11 @@ import * as React from 'react';
 import { Checkbox } from 'react-native-paper';
 
 export default class CheckListItem extends React.Component {
-    state = {
-        checked: false,
+    constructor(props) {
+        super(props);
+        state = {
+            checked: false,
+        };
     };
 
     render() {
