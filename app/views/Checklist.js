@@ -1,8 +1,9 @@
 import React from 'react';
-import { View, StyleSheet, Text, ScrollView } from 'react-native';
+import { View, StyleSheet, Text, ScrollView, DatePickerAndroid, DatePickerIOS, TextInput } from 'react-native';
 import { Checkbox, Button } from 'react-native-paper';
 // import { CheckListItem } from '../components/CheckListItem'
 
+// Styling
 const styles = StyleSheet.create({
     checklistContainer: {
         flexDirection: 'row',
@@ -43,8 +44,12 @@ export class Checklist extends React.Component {
         airMoniter: false,
         blower: false,
         retrievelTripod: false,
-
     };
+
+    // Functions for this page:
+    clearFields = () => ({
+
+    });
     handleSubmit = () => {
 
         console.log(this.state)
@@ -56,7 +61,33 @@ export class Checklist extends React.Component {
             item2 } = this.state;
         return (
             <ScrollView>
-                <Text>Hello World! </Text>
+                {/* Beginning of checklist */}
+                <View>
+                    <Text>Job #:</Text>
+                    <TextInput
+                        style={styles.inputs}
+                        placeholder={"1234"}
+                        keyboardType={"number-pad"}
+                        onChangeText={(text) => this.setState({ jobNumber: text })}
+                        value={this.state.jobNumber}
+                    />
+                    <Text>Project Name:</Text>
+                    <TextInput
+                        style={styles.inputs}
+                        placeholder={"Project Name"}
+                        onChangeText={(text) => this.setState({ projectName: text })}
+                        value={this.state.projectName}
+                    />
+                    <Text>Job Description:</Text>
+                    <TextInput
+                        style={styles.inputs}
+                        multiline={true}
+                        numberOfLines={4}
+                        placeholder={"Job Description"}
+                        onChangeText={(text) => this.setState({ jobDescription: text })}
+                        value={this.state.jobDescription}
+                    />
+                </View>
                 <Text>LIST ALL REQUIRED SAFETY EQUIPMENT</Text>
                 <View style={styles.checklistContainer}>
                     <Checkbox
@@ -223,50 +254,22 @@ export class Checklist extends React.Component {
                     />
                     <Text>Retrievel Tripod</Text>
                 </View>
+                <Text>Overall Project Schedule:</Text>
+                <Text>Start Date</Text>
 
-                <Text>ITEM TWO</Text>
-                <Checkbox
-                    status={this.state.item2 ? 'checked' : 'unchecked'}
-                    onPress={() => { this.setState({ item2: !item2 }); }} />
-
-
+                <Text>End Date</Text>
 
                 <Button
                     mode="contained"
                     onPress={() => this.handleSubmit()}>
                     Submit
   </Button>
+                <Button
+                    mode="contained"
+                    onPress={() => this.clearFields()}>
+                    Clear
+  </Button>
             </ScrollView>
         )
     }
 }
-
-// Working Example from Snack
-// import React, {Fragment} from 'react';
-// import { Checkbox, Button } from 'react-native-paper';
-
-// export default class MyComponent extends React.Component {
-//   state = {
-//     test2: false,
-//     test: false
-//   };
-
-//   render() {
-//     const { test } = this.state;
-//     const {test2} = this.state;
-
-//     return (
-
-//     <Fragment>
-//        <Checkbox
-//         status={test ? 'checked' : 'unchecked'}
-//         onPress={() => { this.setState({ test: !test }); }}
-//       />
-//       <Checkbox
-//         status={test2 ? 'checked' : 'unchecked'}
-//         onPress={() => { this.setState({ test2: !test2 }); }}
-//       />
-//   </Fragment>
-//     );
-//   }
-// }
