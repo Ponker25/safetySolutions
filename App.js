@@ -22,42 +22,22 @@ import { About } from './app/views/About';
 import { Checklist } from './app/views/Checklist';
 import { DefaultTheme, Provider as PaperProvider, BottomNavigation, Appbar } from 'react-native-paper';
 
-// TODO: need to figure out the navigation redner issue, it has to do with navigationOptions and getting an undefined
+// TODO: need to figure out the tab icons and how to add in with stack navigator. Work on the styling and adding theme. 
 const MyRoutes = createMaterialBottomTabNavigator({
-    Home: {screen: Home, navigationOptions: { 
-        key: 'Home',
-        tabBarLabel: 'Home', 
-        tabBarIcon: ({ tintColor }) => (<Icon name="home" size={30} color="#900" />)
-  },
-},
-    Contact: {screen: Contact, navigationOptions: { 
-      key: 'Contact',
-      tabBarLabel: 'Contact', 
-      tabBarIcon: ({ tintColor }) => (<Icon name="message" size={30} color="#900" />)
-},
-},
+    Home: {screen: Home, tabBarIcon: Home},
+    Contact: {screen: Contact},
     // VideoClipsRT: {screen: VideoClips},
     // VideoDetailRT: {screen: VideoDetail},
     // RegisterRT: {screen: Register},
     // LoginRT: {screen: Login},
-    Blog: {screen: Blog, navigationOptions: { 
-      key: 'Blog',
-      tabBarLabel: 'Blog', 
-      tabBarIcon: ({ tintColor }) => (<Icon name="public" size={30} color="#900" />)
-},
-},
+    Blog: {screen: Blog},
     // BlogDetail: {screen: BlogDetail},
-    // AboutRT: {screen: About},
-    Checklist: {screen: Checklist, navigationOptions: { 
-      key: 'Checklist',
-      tabBarLabel: 'Checklist', 
-      tabBarIcon: ({ tintColor }) => (<Icon name="done" size={30} color="#900" />)
-},
-},
+    About: {screen: About},
+    Checklist: {screen: Checklist},
     // More: {screen: More}
   },
   { initialRouteName: 'Home',
-    order: ['Home', 'Contact', 'Blog', 'Checklist'],
+    order: ['Home', 'Contact', 'Blog', 'Checklist', 'About'],
     tabBarOptions: {
       activeTintColor: '#D4AF37', 
       inactiveTintColor: 'gray',
