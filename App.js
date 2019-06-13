@@ -24,7 +24,7 @@ import { DefaultTheme, Provider as PaperProvider, BottomNavigation, Appbar } fro
 
 // TODO: need to figure out the tab icons and how to add in with stack navigator. Work on the styling and adding theme. 
 const MyRoutes = createMaterialBottomTabNavigator({
-    Home: {screen: Home, tabBarIcon: Home},
+    Home: {screen: Home, Icon: Home},
     Contact: {screen: Contact},
     // VideoClipsRT: {screen: VideoClips},
     // VideoDetailRT: {screen: VideoDetail},
@@ -37,7 +37,7 @@ const MyRoutes = createMaterialBottomTabNavigator({
     // More: {screen: More}
   },
   { initialRouteName: 'Home',
-    order: ['Home', 'Contact', 'Blog', 'Checklist', 'About'],
+    order: ['Home','Contact', 'Blog', 'Checklist', 'About'],
     tabBarOptions: {
       activeTintColor: '#D4AF37', 
       inactiveTintColor: 'gray',
